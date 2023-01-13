@@ -24,7 +24,7 @@ class JavaMailDemoApplicationTests {
         simpMsg.setSubject("subject");
         simpMsg.setText("content");
         mailSender.send(simpMsg);
-        String conflicts = "conflicts";// 1234567
+        String conflicts = "conflicts".toUpperCase();// 1234567
         // 我再提交一个冲突再ws分支kkk
     }
 
