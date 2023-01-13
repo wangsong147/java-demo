@@ -24,6 +24,7 @@ class JavaMailDemoApplicationTests {
         simpMsg.setSubject("subject");
         simpMsg.setText("content");
         mailSender.send(simpMsg);
+        String conflicts = "conflicts";
     }
 
 }
