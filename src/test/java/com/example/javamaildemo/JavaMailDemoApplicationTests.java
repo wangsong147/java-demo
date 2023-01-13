@@ -25,6 +25,7 @@ class JavaMailDemoApplicationTests {
         simpMsg.setText("content");
         mailSender.send(simpMsg);
         String conflicts = "conflicts";// 1234567
+        // 我再提交一个冲突再ws分支
     }
 
 }
