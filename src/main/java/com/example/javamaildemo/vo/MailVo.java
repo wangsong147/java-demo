@@ -11,4 +11,5 @@ public class MailVo {
     private Long id;
     private String fromMail;
     private String to;
+    private int age;
 }
