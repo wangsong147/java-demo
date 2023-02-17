@@ -1,61 +1,167 @@
 package com.example.javamaildemo;
 
 import com.example.javamaildemo.vo.MailVo;
-import org.assertj.core.internal.Arrays;
+import com.google.common.html.HtmlEscapers;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.core.JdbcOperations;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
+//import org.springframework.security.core.userdetails.User;
+//import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.userdetails.UserDetailsService;
+//import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
+import java.net.InetAddress;
+import java.net.MalformedURLException;
 import java.net.Socket;
 import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.Collator;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAccessor;
 import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
+import java.util.function.ToIntFunction;
+import java.util.regex.Pattern;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 @SpringBootTest
+@Slf4j
 class JavaMailDemoApplicationTests {
     @Autowired
     JavaMailSender mailSender;
 
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    JdbcOperations jdbcOperations;
+
     @Test
-    void leetCode() throws IOException {
-        URL url = new URL("https://www.bilibili.com/video/BV1Kb411W75N/?p=629&spm_id_from=pageDriver&vd_source=95cab191d2db549153ec03e21f31");
-        System.out.println(url.getPort());
-        System.out.println(url.getUserInfo());
-        UserDetailsService detailService;
-        User user;
-        UserDetails userDetails;
-        /*
-         *
-         *
-         *
-         * */
-        int[] nums = {1, 2, 3};
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int num : nums) {
-            if (map.containsKey(num)) {
-                System.out.println("true");
-                return;
-            }
-            map.put(num, num);
+    void testStr() {
+    }
+
+    @Test
+    void demo() {
+        String ss = "ss";
+        boolean b = "abcdefgh".regionMatches(true, 2, ss, 3, 4);
+        StringBuffer we = new StringBuffer();
+        System.out.println(Integer.decode("99"));
+        String rep = "wangwzsls";
+        System.out.println(rep.replace('w', ' '));
+        System.out.println(rep.replace("w", ""));
+
+        IntStream.range(1, 10).limit(5).forEach(System.out::println);
+        IntStream.of(1, 2, 3).forEach(System.out::println);
+
+        List<Integer> integers = Arrays.asList(1, 2, 3);
+        Stream.generate(() -> integers).limit(4).forEach(System.out::println);
+        // 时间戳
+        long l = LocalDateTime.now().toInstant(ZoneOffset.of("+8")).toEpochMilli();
+        LocalDateTime time2localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(l), ZoneId.systemDefault());
+        System.out.println("时间戳：" + l);
+        System.out.println("localdatetime：" + time2localDateTime);
+
+
+        // Date <-> LocalDateTime
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.of("GMT+8"));
+        Date date = Date.from(LocalDateTime.now().toInstant(ZoneOffset.of("+8")));
+        System.out.println("LocalDateTime：" + localDateTime);
+        System.out.println("Date：" + date);
+
+    }
+
+    public static void main(String[] args) throws Exception {
+        String fileName = "../a/file/name/test/";
+        Path path = Paths.get(fileName);
+        System.out.println(path.getFileName().toString());
+        System.out.println("\n");
+
+        URL url = new URL("https://www.baidu.com/data");
+        if (!url.getProtocol().startsWith("http") || !url.getProtocol().startsWith("https"))
+            throw new RuntimeException("不是http或https协议");
+        InetAddress inetAddress = InetAddress.getByName(url.getHost());
+        if (inetAddress.isAnyLocalAddress() || inetAddress.isLoopbackAddress() || inetAddress.isLinkLocalAddress()) {
+            throw new RuntimeException("112");
         }
-        System.out.println("false");
+//        String str = "abc";
+//        String input = "Abcabcabcd123";
+//        System.out.println(input.contains(str.toLowerCase()));
+//        System.out.println(Pattern.compile(str, Pattern.CASE_INSENSITIVE).matcher("Abcabcabcd123").find());
+    }
+
+    @Test
+    void testOptional() {
+        List<String> nameList = new ArrayList<>();
+        nameList.add("Darcy");
+        nameList.add("Mike");
+        nameList.add("Tom");
+        List<String> upperCaseNameList = nameList.stream()
+                .map(String::toUpperCase)
+                .collect(Collectors.toList());
+        upperCaseNameList.forEach(name -> System.out.println(name + ","));
+    }
+
+    @Test
+    void t() {
+        List<MailVo> mailVos = new ArrayList<>();
+        mailVos.add(new MailVo(4L, "from1", "to", 5));
+        mailVos.add(new MailVo(6L, "from1", "to", 1));
+//        mailVos.add(null);
+        mailVos.add(new MailVo(1L, "from2", "to", 1));
+//        mailVos.add(null);
+        mailVos.add(new MailVo(5L, "from2", "to", 4));
+
+//        IntStream intStream = mailVos.stream().mapToInt(MailVo::getAge);
+
+        //        String s = mailVos.stream().map(MailVo::toString).collect(Collectors.joining(","));
+//        System.out.println(s+"\n");
+//Stream.generate()
+        UUID uuid = UUID.randomUUID();
+        System.out.println(uuid);
+
+        Map<String, List<MailVo>> collect = mailVos.stream()
+                .collect(Collectors.groupingBy(mailVo -> mailVo.getFromMail() + "11"));
+        collect.forEach((k, v) -> System.out.println(k + ":" + v));
+
+        Map<Boolean, List<MailVo>> collect1 = mailVos.stream()
+                .collect(Collectors.partitioningBy(a -> a.getAge() > 0));
+        collect1.forEach((k, v) -> System.out.println(k + ":" + v));
+
+//        // Comparator静态方法
+//        mailVos.stream().sorted(Comparator.comparing(MailVo::getId).reversed()).forEach(System.out::println);System.out.println("\n");
+//        // 对象方法
+//        mailVos.stream().sorted((x,y)->Long.compare(y.getId(),x.getId())).forEach(System.out::println);System.out.println("\n");
+//
+//        mailVos.stream().sorted((x,y)->y.getAge()-x.getAge()).forEach(System.out::println);
+//
+//        // nullsFirst(): 1.处理null值，避免空指针异常  2.把null排在前面
+//        System.out.println("=============");
+//        mailVos.stream().sorted(Comparator.nullsFirst(Comparator.comparing(MailVo::getId).reversed())).forEach(System.out::println);
+//        // thenComparing(): 前者相等的时候，按后者比较
+//        // reversed(): 针对的是整个数组进行一个反转
+//        System.out.println("=============");
+//        mailVos.stream().sorted(Comparator.comparing(MailVo::getAge).thenComparingLong(MailVo::getId)).forEach(System.out::println);
+    }
+
+    @Test
+    void stream() throws IOException {
+
     }
 
     @Test
@@ -65,9 +171,6 @@ class JavaMailDemoApplicationTests {
         TemporalAccessor parse = formatter.parse("2023年-01月-18日");
         System.out.println(formatter.format(LocalDateTime.now()));
         System.out.println(parse);
-
-        Date date1 = new Date();
-        Date date2 = new Date(11111111111L);
     }
 
     @Test
@@ -107,15 +210,10 @@ class JavaMailDemoApplicationTests {
         collection.add(mailVo3);
         System.out.println(collection);
 
-        Optional<String> reduce = collection.stream().map(MailVo::getTo).reduce((a, b) -> a + b);//
-        reduce.ifPresent(System.out::println);
 
         String s = collection.stream().map(MailVo::getTo).reduce("", (a, b) -> a + b);  // 头部拼接一个str
         System.out.println(s);
 
-
-//        System.out.println(collection.contains(mailVo2)); // true
-//        collection.remove(mailVo2); // 默认尾删
         for (MailVo mailVo : collection) {
             mailVo.setFromMail("0");
             mailVo.setTo("0");
@@ -137,15 +235,10 @@ class JavaMailDemoApplicationTests {
         Collection<Integer> integers2 = new ArrayList<>();
         integers2.add(new Integer(1));
         integers2.add(new Integer(2));
-//        integers2.add(7);
+
         integers2.add(new Integer(3));
         integers2.add(new Integer(4));
-//        System.out.println(integers2);
 
-//        integers1.removeAll(integers2);
-//        System.out.println(integers1);
-//        integers1.retainAll(integers2);
-//        System.out.println(integers1);
 
         for (Integer integer : integers2) {
             int i = integer.intValue();

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.mail.Session;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("mail")
@@ -19,9 +21,6 @@ public class MailController {
 
     @PostMapping("send")
     public void send(MailVo mailVo) {
-
-
-
         SimpleMailMessage simpMsg = new SimpleMailMessage();
         /*
          * 553 Mail from must equal authorized user
