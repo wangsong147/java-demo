@@ -1,27 +1,42 @@
 package com.example.javamaildemo.controller;
 
 import com.alibaba.excel.EasyExcel;
+import com.alibaba.excel.EasyExcelFactory;
 import com.alibaba.excel.support.ExcelTypeEnum;
+import com.example.javamaildemo.entity.Person;
 import com.example.javamaildemo.excel.RolePlayUsersExcel;
+import com.example.javamaildemo.listeners.ExcelListener;
+import com.example.javamaildemo.service.ExcelService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.server.ServletServerHttpResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 @Slf4j
 @RequestMapping("excel")
 @RestController
 public class EasyExcelController {
+    @Autowired
+    ExcelService excelService;
+
+    @GetMapping("add")
+    public void add(@RequestParam MultipartFile file) throws IOException {
+        EasyExcelFactory
+                .read(file.getInputStream(), Person.class, new ExcelListener(excelService))
+                .excelType(ExcelTypeEnum.XLSX)
+                .sheet()
+                .doRead();
+    }
+
     @GetMapping("downLoad")
     public void downLoad(HttpServletResponse response) throws IOException {
         List<RolePlayUsersExcel> excels = new ArrayList<>();

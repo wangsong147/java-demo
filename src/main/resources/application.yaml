@@ -1,0 +1,12 @@
+server:
+  port: 9999
+spring:
+  mail:
+    host: smtp.163.com
+    username: song5_wang@163.com
+    password: FIUECJDZXERBYFNZ
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/work?currentSchema=public&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: postgres
+    password: ws810216
