@@ -77,6 +77,8 @@ public class ExcelListener implements ReadListener<Person> {
         personFromDB.forEach(person -> {
             if (list.contains(person)) {
                 excelService.removeById(person.getId());// 设置外键级联删除relation记录
+                // todo 或者逻辑删除
+                // person.setDeleted((short)1);excelService.updateById(person);// 逻辑删除
             }
             excelService.save(person);
         });
