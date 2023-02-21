@@ -76,7 +76,7 @@ public class ExcelListener implements ReadListener<Person> {
         // 1.数据库中存在，删除，再添加 2.数据库中不存在，直接添加
         personFromDB.forEach(person -> {
             if (list.contains(person)) {
-                excelService.removeById(person.getId());
+                excelService.removeById(person.getId());// 设置外键级联删除relation记录
             }
             excelService.save(person);
         });
