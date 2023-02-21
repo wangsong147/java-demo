@@ -47,4 +47,22 @@ public class EasyExcelController {
                 .sheet("人员名单")
                 .doWrite(excels);
     }
+
+    public static void main(String[] args) {
+        List<RolePlayUsersExcel> excels = new ArrayList<>();
+        excels.add(new RolePlayUsersExcel());
+        excels.add(new RolePlayUsersExcel());
+        excels.forEach(r -> {
+                    r.setStartTime(LocalDateTime.now().withHour(0).withMinute(0).withSecond(0).withNano(0));
+                    r.setEndTime(LocalDateTime.now().withHour(0).withMinute(0).withSecond(0).withNano(0));
+                    log.info("{}", r.getStartTime());
+                    log.info("{}", r.getEndTime());
+                }
+        );
+
+        EasyExcel.write("default_path.xlsx", RolePlayUsersExcel.class)
+                .excelType(ExcelTypeEnum.XLSX)
+                .sheet("人员名单")
+                .doWrite(excels);
+    }
 }

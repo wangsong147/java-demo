@@ -1,41 +1,29 @@
 package com.example.javamaildemo;
 
+import com.example.javamaildemo.service.MailService;
 import com.example.javamaildemo.vo.MailVo;
-import com.google.common.html.HtmlEscapers;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.jdbc.core.JdbcOperations;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.mail.SimpleMailMessage;
+
 import org.springframework.mail.javamail.JavaMailSender;
 //import org.springframework.security.core.userdetails.User;
 //import org.springframework.security.core.userdetails.UserDetails;
 //import org.springframework.security.core.userdetails.UserDetailsService;
 //import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 
-import java.io.*;
+import javax.mail.MessagingException;
 import java.net.InetAddress;
-import java.net.MalformedURLException;
-import java.net.Socket;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.Collator;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAccessor;
 import java.util.*;
-import java.util.function.BinaryOperator;
-import java.util.function.Function;
-import java.util.function.ToIntFunction;
-import java.util.regex.Pattern;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -46,11 +34,17 @@ class JavaMailDemoApplicationTests {
     @Autowired
     JavaMailSender mailSender;
 
-    @Autowired
-    JdbcTemplate jdbcTemplate;
+//    @Autowired
+//    JdbcTemplate jdbcTemplate;
+//
+//    @Autowired
+//    JdbcOperations jdbcOperations;
+
+    @Value("{spring.mail.username}")
+    String from;
 
     @Autowired
-    JdbcOperations jdbcOperations;
+    MailService mailService;
 
     @Test
     void testStr() {
@@ -99,95 +93,33 @@ class JavaMailDemoApplicationTests {
         if (inetAddress.isAnyLocalAddress() || inetAddress.isLoopbackAddress() || inetAddress.isLinkLocalAddress()) {
             throw new RuntimeException("112");
         }
-//        String str = "abc";
-//        String input = "Abcabcabcd123";
-//        System.out.println(input.contains(str.toLowerCase()));
-//        System.out.println(Pattern.compile(str, Pattern.CASE_INSENSITIVE).matcher("Abcabcabcd123").find());
     }
 
     @Test
-    void testOptional() {
-        List<String> nameList = new ArrayList<>();
-        nameList.add("Darcy");
-        nameList.add("Mike");
-        nameList.add("Tom");
-        List<String> upperCaseNameList = nameList.stream()
-                .map(String::toUpperCase)
-                .collect(Collectors.toList());
-        upperCaseNameList.forEach(name -> System.out.println(name + ","));
+    public void sendTemplateMailTest() throws MessagingException {
+        String to = "ws18740278017@163.com";
+        String subject = "Springboot 发送 模版邮件";
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("username", "wangsong");
+        mailService.sendTemplateMail(to, subject, paramMap, "RegisterSuccess");
     }
 
     @Test
-    void t() {
-        List<MailVo> mailVos = new ArrayList<>();
-        mailVos.add(new MailVo(4L, "from1", "to", 5));
-        mailVos.add(new MailVo(6L, "from1", "to", 1));
-//        mailVos.add(null);
-        mailVos.add(new MailVo(1L, "from2", "to", 1));
-//        mailVos.add(null);
-        mailVos.add(new MailVo(5L, "from2", "to", 4));
-
-//        IntStream intStream = mailVos.stream().mapToInt(MailVo::getAge);
-
-        //        String s = mailVos.stream().map(MailVo::toString).collect(Collectors.joining(","));
-//        System.out.println(s+"\n");
-//Stream.generate()
-        UUID uuid = UUID.randomUUID();
-        System.out.println(uuid);
-
-        Map<String, List<MailVo>> collect = mailVos.stream()
-                .collect(Collectors.groupingBy(mailVo -> mailVo.getFromMail() + "11"));
-        collect.forEach((k, v) -> System.out.println(k + ":" + v));
-
-        Map<Boolean, List<MailVo>> collect1 = mailVos.stream()
-                .collect(Collectors.partitioningBy(a -> a.getAge() > 0));
-        collect1.forEach((k, v) -> System.out.println(k + ":" + v));
-
-//        // Comparator静态方法
-//        mailVos.stream().sorted(Comparator.comparing(MailVo::getId).reversed()).forEach(System.out::println);System.out.println("\n");
-//        // 对象方法
-//        mailVos.stream().sorted((x,y)->Long.compare(y.getId(),x.getId())).forEach(System.out::println);System.out.println("\n");
-//
-//        mailVos.stream().sorted((x,y)->y.getAge()-x.getAge()).forEach(System.out::println);
-//
-//        // nullsFirst(): 1.处理null值，避免空指针异常  2.把null排在前面
-//        System.out.println("=============");
-//        mailVos.stream().sorted(Comparator.nullsFirst(Comparator.comparing(MailVo::getId).reversed())).forEach(System.out::println);
-//        // thenComparing(): 前者相等的时候，按后者比较
-//        // reversed(): 针对的是整个数组进行一个反转
-//        System.out.println("=============");
-//        mailVos.stream().sorted(Comparator.comparing(MailVo::getAge).thenComparingLong(MailVo::getId)).forEach(System.out::println);
-    }
-
-    @Test
-    void stream() throws IOException {
-
-    }
-
-    @Test
-    void formatter() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年-MM月-dd日");
-        String format = formatter.format(LocalDateTime.now());
-        TemporalAccessor parse = formatter.parse("2023年-01月-18日");
-        System.out.println(formatter.format(LocalDateTime.now()));
-        System.out.println(parse);
-    }
-
-    @Test
-    void testSendEmail() {
-        SimpleMailMessage simpMsg = new SimpleMailMessage();
-        /*
-         * 553 Mail from must equal authorized user
-         * 发件人必须和授权用户一致
-         */
-        simpMsg.setFrom("song5_wang@163.com");
-//        simpMsg.setFrom("ws18740278017@163.com");
-        simpMsg.setTo("18945588017@163.com");
-        simpMsg.setSubject("subject");
-        simpMsg.setText("content");
-        mailSender.send(simpMsg);
-        String conflicts = "conflicts".toUpperCase();// 1234567
-        // 我再提交一个冲突再ws分支kkk
+    void testSendEmail() throws Exception {
+//        String to = "1148791948@qq.com";
+        String to = "ws18740278017@163.com";
+        String subject = "Springboot 发送 HTML 图片邮件";
+        String content =
+                "<h2>Hi~</h2>" +
+                "<p>第一封 Springboot HTML 图片邮件</p>" +
+                "<br/>" +
+                "<img src=\"cid:img01\" /><img src=\"cid:img02\" />";
+        String imgPath1 = "R:\\1_ws_projects\\java-demo\\src\\main\\resources\\ai写实2.png";
+        String imgPath2 = imgPath1.replaceAll("2\\.",".");
+        Map<String, String> imgMap = new HashMap<>();
+        imgMap.put("img01", imgPath1);
+        imgMap.put("img02", imgPath2);
+        mailService.sendImgMail(to, subject, content, imgMap);
     }
 
     @Test

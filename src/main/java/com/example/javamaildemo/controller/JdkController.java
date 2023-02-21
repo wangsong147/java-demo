@@ -17,10 +17,11 @@ public class JdkController {
         JdkController.list = new ArrayList<>();
         list.add(new Person(1L, "老莫", 35));
         list.add(new Person(3L, "李三", 20));
+        list.add(new Person(3L, "李三", 20));
         list.add(new Person(2L, "王二", 20));
 //        list.add(null);list.add(null);
         list.add(new Person(4L, "启强", 50));
-        list.add(new Person(4L, "启强2号", 50));
+        list.add(new Person(4L, "启强", 50));
     }
 
     public static void main(String[] args) {
@@ -58,24 +59,34 @@ public class JdkController {
         // 判断
         System.out.println("【optional：isPresent】" + person.isPresent() + "\t");
         person.ifPresent(p -> System.out.println("【optional：ifPresent】" + p.getName() + "\t"));
+
+        Person p = null;
+        String kong = Optional.ofNullable(p).map(Person::getName).orElse("kong");
+
         // 设置默认值
         Person orElsePerson = person.orElse(getPerson());// 参数是Person类型，直接赋值
         Person orElseGetPerson = person.orElseGet(JdkController::getPerson);// 参数是函数式接口，只有在没有值的时候才会调用接口实现类的方法，得到一个Person类
 
         Object orElseObj = empty.orElse(getPerson());
         Object orElseGetObj = empty.orElseGet(JdkController::getPerson);
+        System.out.println("【optional: 空】" + orElseGetObj);
 
     }
 
     private static Person getPerson() {
         System.out.println("【optional: orElse/orElseGet】getPerson()被打印了");
-        return Person.builder().id(100L).name("默认值").age(2000).build();
+        return Person.builder().id(null).name("空").age(0).build();
     }
 
     public static void groupBy() {
-//        Map<Integer, List<Person>> collect = list.stream().collect(Collectors.groupingBy(person -> person.getAge()));
-//        System.out.println("【groupBy】" + collect);
-        System.out.println("【groupBy】" + list.stream().collect(Collectors.groupingBy(p -> p.getId() > 2)));
+        Map<String, Integer> map = new HashMap<>();
+        Map<String, List<Person>> collect = list.stream().collect(Collectors.groupingBy(Person::getName));
+        collect.forEach((name, list) -> {
+            // 1.年龄sum 2.list转Person
+            int age = list.stream().mapToInt(Person::getAge).sum();
+            map.put(name,age);
+        });
+        System.out.println(map);
     }
 
     public static void partition() {
@@ -129,7 +140,7 @@ public class JdkController {
     }
 
     public static void peek() {
-        System.out.println("【peek】       " + list.stream().peek(person -> person.setAge(0)).collect(Collectors.toList()));
+        System.out.println("【peek】" + list.stream().peek(person -> person.setAge(0)).collect(Collectors.toList()));
     }
 
 
