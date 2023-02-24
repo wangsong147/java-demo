@@ -1,4 +1,4 @@
-package com.example.javamaildemo.filters;
+package com.example.javamaildemo.filter;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -12,13 +12,13 @@ import java.io.IOException;
 
 @Slf4j
 @Component
-public class CFilter extends OncePerRequestFilter {
+public class MyFilter2 extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        log.info("C请求filter1");
+        log.info("【filter】-> 请求filter2");
         filterChain.doFilter(request, response);
-        log.info("C响应filter2");
+        log.info("【filter】-> 响应filter2");
     }
 
 }

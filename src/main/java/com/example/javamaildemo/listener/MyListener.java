@@ -1,4 +1,4 @@
-package com.example.javamaildemo.listeners;
+package com.example.javamaildemo.listener;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

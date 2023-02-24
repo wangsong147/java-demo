@@ -1,0 +1,21 @@
+server:
+  port: 9999
+spring:
+  mail:
+    host: smtp.163.com
+    username: song5_wang@163.com
+    password: FIUECJDZXERBYFNZ
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:postgresql://localhost:5432/postgres?currentSchema=wstest&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: postgres
+    password: postgres
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 全局配置，也可以通过配置类来配置 public GlobalConfig globalConfig() { return new GlobalConfig(); }
+  global-config:
+    db-config:
+      # 拼接sql时会加上前缀t_: select t_person
+      table-prefix: t_
+#      id-type: input
