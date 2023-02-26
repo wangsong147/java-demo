@@ -9,7 +9,8 @@ spring:
     driver-class-name: com.p6spy.engine.spy.P6SpyDriver
     url: jdbc:p6spy:postgresql://localhost:5432/postgres?currentSchema=wstest&characterEncoding=utf-8&serverTimezone=GMT%2B8
     username: postgres
-    password: postgres
+#    password: postgres
+    password: ws810216
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

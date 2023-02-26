@@ -34,7 +34,7 @@ public class WxCpController {
 //        configStorage.setCorpSecret(channelEntity.getChannelSecret());// agent_secret
 //        configStorage.setAgentId(Integer.valueOf(channelEntity.getChannelAgentId()));// agentId
 //        configStorage.setToken(channelEntity.getChannelToken());// 加密签名
-//        configStorage.setAesKey(channelEntity.getChannelEncodingAesKey());//
+//        configStorage.setAesKey(channelEntity.getChannelEncodingAesKey());
 
         WxCpService wxCpService = new WxCpServiceImpl();
         wxCpService.setWxCpConfigStorage(configStorage);

@@ -1,20 +1,15 @@
 package com.example.javamaildemo.controller;
 
 import com.example.javamaildemo.entity.Person;
-import com.example.javamaildemo.vo.MailVo;
 
-import javax.swing.text.html.Option;
 import java.util.*;
-import java.util.function.BinaryOperator;
-import java.util.function.Consumer;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class JdkController {
+public class StreamController {
     private static List<Person> list;
 
     static {
-        JdkController.list = new ArrayList<>();
+        StreamController.list = new ArrayList<>();
         list.add(new Person(1L, "老莫", 35));
         list.add(new Person(3L, "李三", 20));
         list.add(new Person(3L, "李三", 20));
@@ -65,10 +60,10 @@ public class JdkController {
 
         // 设置默认值
         Person orElsePerson = person.orElse(getPerson());// 参数是Person类型，直接赋值
-        Person orElseGetPerson = person.orElseGet(JdkController::getPerson);// 参数是函数式接口，只有在没有值的时候才会调用接口实现类的方法，得到一个Person类
+        Person orElseGetPerson = person.orElseGet(StreamController::getPerson);// 参数是函数式接口，只有在没有值的时候才会调用接口实现类的方法，得到一个Person类
 
         Object orElseObj = empty.orElse(getPerson());
-        Object orElseGetObj = empty.orElseGet(JdkController::getPerson);
+        Object orElseGetObj = empty.orElseGet(StreamController::getPerson);
         System.out.println("【optional: 空】" + orElseGetObj);
 
     }
