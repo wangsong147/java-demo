@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.javamaildemo.mapper.DepMapper">
+    <resultMap id="empMap" type="com.example.javamaildemo.entity.Dep">
+        <id property="depId" column="id" jdbcType="BIGINT"/>
+        <result property="depName" column="name" jdbcType="VARCHAR"/>
+        <!--    property: list属性名, ofType: list的泛型类型    -->
+        <collection property="emps" ofType="com.example.javamaildemo.entity.Emp">
+            <id property="empId" column="id"/>
+            <result property="age" column="age"/>
+            <result property="email" column="email"/>
+            <result property="empName" column="empName"/>
+        </collection>
+    </resultMap>
+
+    <select id="collection" resultMap="empMap">
+        SELECT *
+        FROM dep d
+                 LEFT JOIN emp e ON d.id = e.depId
+        WHERE d.id > 10
+    </select>
+</mapper>

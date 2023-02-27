@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.javamaildemo.mapper.EmpMapper">
+
+    <resultMap id="BaseMap" type="com.example.javamaildemo.entity.Emp">
+        <id property="empId" column="id"/>
+        <result property="email" column="email"/>
+        <association property="dep" javaType="com.example.javamaildemo.entity.Dep">
+            <result property="depName" column="dep_name"/>
+            <result property="depId" column="id"/>
+        </association>
+    </resultMap>
+    <select id="association" resultMap="BaseMap">
+        SELECT *
+        FROM emp e
+                 LEFT JOIN dep d ON e.depId = d.id
+        WHERE d.id > 10
+    </select>
+</mapper>

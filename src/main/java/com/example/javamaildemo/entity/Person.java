@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@KeySequence(value = "t_person_id_seq")
+@KeySequence(value = "person_id_seq")
 //@TableName("t_person") 配置文件统一设置了prefix所以这里不能写死
 public class Person {
     // 不输入会默认设置主键id为null报错
