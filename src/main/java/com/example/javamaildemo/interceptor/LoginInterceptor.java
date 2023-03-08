@@ -1,6 +1,7 @@
 package com.example.javamaildemo.interceptor;
 
 import cn.hutool.jwt.JWT;
+import cn.hutool.jwt.JWTUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -18,12 +19,11 @@ public class LoginInterceptor implements HandlerInterceptor {
         String token = request.getHeader("Authorization");
         if (StringUtils.isNotBlank(token)) {
             String bear = token.trim();
-//            JWT.of(token).
             try{
                 // jwt解析token
 
             }catch (Exception e){
-                // 解析失败
+                // 解析失败则不能继续访问
                 throw new RuntimeException("token失效");
             }
         }
