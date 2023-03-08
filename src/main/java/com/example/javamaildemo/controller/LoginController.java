@@ -42,4 +42,10 @@ public class LoginController {
         return R.ok(page);
     }
 
+    @GetMapping("/async")
+    public String async() throws InterruptedException {
+        String async = loginService.async();
+        System.out.println("sout: ok");
+        return "ok";
+    }
 }

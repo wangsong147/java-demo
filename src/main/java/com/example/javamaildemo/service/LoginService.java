@@ -4,4 +4,7 @@ import com.example.javamaildemo.entity.Person;
 
 public interface LoginService {
     Person getUserInfo(String userName, String password);
+
+    String async() throws InterruptedException;
+
 }

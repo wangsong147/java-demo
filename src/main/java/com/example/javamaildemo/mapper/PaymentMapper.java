@@ -2,6 +2,7 @@ package com.example.javamaildemo.mapper;
 
 import com.example.javamaildemo.entity.Payment;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
 * @author JK
@@ -9,6 +10,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2023-03-03 10:59:37
 * @Entity com.example.javamaildemo.entity.Payment
 */
+@Mapper
 public interface PaymentMapper extends BaseMapper<Payment> {
 
 }

@@ -103,3 +103,322 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2023-02-27 17:21:53.419 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown initiated...
 2023-02-27 17:21:53.462 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown completed.
 2023-02-27 17:21:53.463 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource all closed success,bye
+2023-03-08 21:21:57.815 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Starting JavaMailDemoApplication using Java 11.0.16.1 on 192.168.0.101 with PID 2163 (/Users/ws/IdeaProjects/2.demo/java-demo/target/classes started by ws in /Users/ws/IdeaProjects/2.demo/java-demo)
+2023-03-08 21:21:57.816 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -The following 1 profile is active: "dev"
+2023-03-08 21:21:57.842 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-08 21:21:57.842 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-08 21:21:58.622 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 9999 (http)
+2023-03-08 21:21:58.629 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:21:58.629 [restartedMain] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2023-03-08 21:21:58.630 [restartedMain] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-03-08 21:21:58.683 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2023-03-08 21:21:58.683 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 841 ms
+2023-03-08 21:21:58.727 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet创建
+2023-03-08 21:21:58.811 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Starting...
+2023-03-08 21:21:59.892 [restartedMain] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2023-03-08 21:21:59.894 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet销毁
+2023-03-08 21:21:59.904 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-03-08 21:22:45.594 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Starting JavaMailDemoApplication using Java 11.0.16.1 on 192.168.0.101 with PID 2175 (/Users/ws/IdeaProjects/2.demo/java-demo/target/classes started by ws in /Users/ws/IdeaProjects/2.demo/java-demo)
+2023-03-08 21:22:45.595 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -The following 1 profile is active: "dev"
+2023-03-08 21:22:45.621 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-08 21:22:45.621 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-08 21:22:46.320 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 9999 (http)
+2023-03-08 21:22:46.326 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:22:46.327 [restartedMain] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2023-03-08 21:22:46.327 [restartedMain] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-03-08 21:22:46.366 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2023-03-08 21:22:46.366 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 744 ms
+2023-03-08 21:22:46.408 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet创建
+2023-03-08 21:22:46.484 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Starting...
+2023-03-08 21:22:46.568 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Start completed.
+2023-03-08 21:22:46.570 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Starting...
+2023-03-08 21:22:47.606 [restartedMain] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2023-03-08 21:22:47.608 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet销毁
+2023-03-08 21:22:47.620 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-03-08 21:23:04.113 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Starting JavaMailDemoApplication using Java 11.0.16.1 on 192.168.0.101 with PID 2193 (/Users/ws/IdeaProjects/2.demo/java-demo/target/classes started by ws in /Users/ws/IdeaProjects/2.demo/java-demo)
+2023-03-08 21:23:04.114 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -The following 1 profile is active: "dev"
+2023-03-08 21:23:04.149 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-08 21:23:04.149 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-08 21:23:04.899 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 9999 (http)
+2023-03-08 21:23:04.905 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:23:04.906 [restartedMain] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2023-03-08 21:23:04.906 [restartedMain] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-03-08 21:23:04.944 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2023-03-08 21:23:04.944 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 794 ms
+2023-03-08 21:23:04.987 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet创建
+2023-03-08 21:23:05.066 [restartedMain] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2023-03-08 21:23:05.067 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet销毁
+2023-03-08 21:23:05.076 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-03-08 21:23:46.966 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Starting JavaMailDemoApplication using Java 11.0.16.1 on 192.168.0.101 with PID 2207 (/Users/ws/IdeaProjects/2.demo/java-demo/target/classes started by ws in /Users/ws/IdeaProjects/2.demo/java-demo)
+2023-03-08 21:23:46.968 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -The following 1 profile is active: "dev"
+2023-03-08 21:23:47.021 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-08 21:23:47.021 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-08 21:23:47.829 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 9999 (http)
+2023-03-08 21:23:47.835 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:23:47.835 [restartedMain] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2023-03-08 21:23:47.835 [restartedMain] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-03-08 21:23:47.875 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2023-03-08 21:23:47.875 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 853 ms
+2023-03-08 21:23:47.918 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet创建
+2023-03-08 21:23:47.999 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Starting...
+2023-03-08 21:23:48.089 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Start completed.
+2023-03-08 21:23:48.091 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Starting...
+2023-03-08 21:23:48.123 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Start completed.
+2023-03-08 21:23:48.124 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource - add a datasource named [master] success
+2023-03-08 21:23:48.124 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource - add a datasource named [slave_1] success
+2023-03-08 21:23:48.124 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource initial loaded [2] datasource,primary datasource named [master]
+2023-03-08 21:23:48.356 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource start closing ....
+2023-03-08 21:23:48.356 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Shutdown initiated...
+2023-03-08 21:23:48.360 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Shutdown completed.
+2023-03-08 21:23:48.360 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown initiated...
+2023-03-08 21:23:48.370 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown completed.
+2023-03-08 21:23:48.372 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource all closed success,bye
+2023-03-08 21:23:48.374 [restartedMain] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2023-03-08 21:23:48.375 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet销毁
+2023-03-08 21:23:48.384 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-03-08 21:24:51.567 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Starting JavaMailDemoApplication using Java 11.0.16.1 on 192.168.0.101 with PID 2244 (/Users/ws/IdeaProjects/2.demo/java-demo/target/classes started by ws in /Users/ws/IdeaProjects/2.demo/java-demo)
+2023-03-08 21:24:51.568 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -The following 1 profile is active: "dev"
+2023-03-08 21:24:51.597 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-08 21:24:51.598 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-08 21:24:52.308 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 9999 (http)
+2023-03-08 21:24:52.314 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:24:52.314 [restartedMain] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2023-03-08 21:24:52.314 [restartedMain] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-03-08 21:24:52.353 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2023-03-08 21:24:52.353 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 755 ms
+2023-03-08 21:24:52.395 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet创建
+2023-03-08 21:24:52.476 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Starting...
+2023-03-08 21:24:52.558 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Start completed.
+2023-03-08 21:24:52.560 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Starting...
+2023-03-08 21:24:52.581 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Start completed.
+2023-03-08 21:24:52.581 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource - add a datasource named [master] success
+2023-03-08 21:24:52.582 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource - add a datasource named [slave_1] success
+2023-03-08 21:24:52.582 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource initial loaded [2] datasource,primary datasource named [master]
+2023-03-08 21:24:53.114 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer -LiveReload server is running on port 35729
+2023-03-08 21:24:53.133 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:24:53.152 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 9999 (http) with context path ''
+2023-03-08 21:24:53.162 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Started JavaMailDemoApplication in 1.92 seconds (JVM running for 2.4)
+2023-03-08 21:25:19.203 [http-nio-9999-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-08 21:25:19.204 [http-nio-9999-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2023-03-08 21:25:19.206 [http-nio-9999-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 2 ms
+2023-03-08 21:25:19.209 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 请求filter1
+2023-03-08 21:25:19.209 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 请求filter2
+2023-03-08 21:25:19.210 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 请求filter3
+2023-03-08 21:25:19.217 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:25:19.217 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:25:22.247 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> postHandle返回modelAndView之前
+2023-03-08 21:25:22.247 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> postHandle返回modelAndView之前
+2023-03-08 21:25:22.247 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:25:22.247 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:25:22.248 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 响应filter3
+2023-03-08 21:25:22.248 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 响应filter2
+2023-03-08 21:25:22.249 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 响应filter1
+2023-03-08 21:25:35.836 [http-nio-9999-exec-3] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 请求filter1
+2023-03-08 21:25:35.836 [http-nio-9999-exec-3] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 请求filter2
+2023-03-08 21:25:35.836 [http-nio-9999-exec-3] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 请求filter3
+2023-03-08 21:25:35.836 [http-nio-9999-exec-3] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:25:35.836 [http-nio-9999-exec-3] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:25:38.844 [http-nio-9999-exec-3] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> postHandle返回modelAndView之前
+2023-03-08 21:25:38.845 [http-nio-9999-exec-3] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> postHandle返回modelAndView之前
+2023-03-08 21:25:38.845 [http-nio-9999-exec-3] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:25:38.845 [http-nio-9999-exec-3] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:25:38.845 [http-nio-9999-exec-3] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 响应filter3
+2023-03-08 21:25:38.845 [http-nio-9999-exec-3] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 响应filter2
+2023-03-08 21:25:38.845 [http-nio-9999-exec-3] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 响应filter1
+2023-03-08 21:26:32.315 [SpringApplicationShutdownHook] INFO  c.e.javamaildemo.listener.MyListener -servlet销毁
+2023-03-08 21:26:32.321 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource start closing ....
+2023-03-08 21:26:32.321 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -master - Shutdown initiated...
+2023-03-08 21:26:32.325 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -master - Shutdown completed.
+2023-03-08 21:26:32.325 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown initiated...
+2023-03-08 21:26:32.328 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown completed.
+2023-03-08 21:26:32.328 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource all closed success,bye
+2023-03-08 21:26:35.399 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Starting JavaMailDemoApplication using Java 11.0.16.1 on 192.168.0.101 with PID 2283 (/Users/ws/IdeaProjects/2.demo/java-demo/target/classes started by ws in /Users/ws/IdeaProjects/2.demo/java-demo)
+2023-03-08 21:26:35.401 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -The following 1 profile is active: "dev"
+2023-03-08 21:26:35.441 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-08 21:26:35.441 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-08 21:26:36.224 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 9999 (http)
+2023-03-08 21:26:36.230 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:26:36.230 [restartedMain] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2023-03-08 21:26:36.230 [restartedMain] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-03-08 21:26:36.270 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2023-03-08 21:26:36.270 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 828 ms
+2023-03-08 21:26:36.312 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet创建
+2023-03-08 21:26:36.396 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Starting...
+2023-03-08 21:26:36.480 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Start completed.
+2023-03-08 21:26:36.482 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Starting...
+2023-03-08 21:26:36.502 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Start completed.
+2023-03-08 21:26:36.502 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource - add a datasource named [master] success
+2023-03-08 21:26:36.502 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource - add a datasource named [slave_1] success
+2023-03-08 21:26:36.502 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource initial loaded [2] datasource,primary datasource named [master]
+2023-03-08 21:26:37.030 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer -LiveReload server is running on port 35729
+2023-03-08 21:26:37.048 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:26:37.067 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 9999 (http) with context path ''
+2023-03-08 21:26:37.077 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Started JavaMailDemoApplication in 2.124 seconds (JVM running for 2.636)
+2023-03-08 21:26:41.142 [http-nio-9999-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-08 21:26:41.143 [http-nio-9999-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2023-03-08 21:26:41.144 [http-nio-9999-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 1 ms
+2023-03-08 21:26:41.147 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 请求filter1
+2023-03-08 21:26:41.147 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 请求filter2
+2023-03-08 21:26:41.147 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 请求filter3
+2023-03-08 21:26:41.153 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:26:41.153 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:26:44.189 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> postHandle返回modelAndView之前
+2023-03-08 21:26:44.190 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> postHandle返回modelAndView之前
+2023-03-08 21:26:44.190 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:26:44.190 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:26:44.191 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 响应filter3
+2023-03-08 21:26:44.191 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 响应filter2
+2023-03-08 21:26:44.191 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 响应filter1
+2023-03-08 21:27:05.676 [SpringApplicationShutdownHook] INFO  c.e.javamaildemo.listener.MyListener -servlet销毁
+2023-03-08 21:27:05.682 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource start closing ....
+2023-03-08 21:27:05.683 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -master - Shutdown initiated...
+2023-03-08 21:27:05.686 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -master - Shutdown completed.
+2023-03-08 21:27:05.686 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown initiated...
+2023-03-08 21:27:05.689 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown completed.
+2023-03-08 21:27:05.689 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource all closed success,bye
+2023-03-08 21:27:08.324 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Starting JavaMailDemoApplication using Java 11.0.16.1 on 192.168.0.101 with PID 2314 (/Users/ws/IdeaProjects/2.demo/java-demo/target/classes started by ws in /Users/ws/IdeaProjects/2.demo/java-demo)
+2023-03-08 21:27:08.326 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -The following 1 profile is active: "dev"
+2023-03-08 21:27:08.371 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-08 21:27:08.371 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-08 21:27:09.286 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 9999 (http)
+2023-03-08 21:27:09.291 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:27:09.292 [restartedMain] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2023-03-08 21:27:09.292 [restartedMain] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-03-08 21:27:09.330 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2023-03-08 21:27:09.330 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 959 ms
+2023-03-08 21:27:09.371 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet创建
+2023-03-08 21:27:09.457 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Starting...
+2023-03-08 21:27:09.545 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Start completed.
+2023-03-08 21:27:09.546 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Starting...
+2023-03-08 21:27:09.566 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Start completed.
+2023-03-08 21:27:09.566 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource - add a datasource named [master] success
+2023-03-08 21:27:09.566 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource - add a datasource named [slave_1] success
+2023-03-08 21:27:09.566 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource initial loaded [2] datasource,primary datasource named [master]
+2023-03-08 21:27:10.112 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer -LiveReload server is running on port 35729
+2023-03-08 21:27:10.131 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:27:10.151 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 9999 (http) with context path ''
+2023-03-08 21:27:10.161 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Started JavaMailDemoApplication in 2.327 seconds (JVM running for 3.094)
+2023-03-08 21:28:52.449 [SpringApplicationShutdownHook] INFO  c.e.javamaildemo.listener.MyListener -servlet销毁
+2023-03-08 21:28:52.456 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource start closing ....
+2023-03-08 21:28:52.457 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -master - Shutdown initiated...
+2023-03-08 21:28:52.460 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -master - Shutdown completed.
+2023-03-08 21:28:52.460 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown initiated...
+2023-03-08 21:28:52.462 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown completed.
+2023-03-08 21:28:52.462 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource all closed success,bye
+2023-03-08 21:28:54.999 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Starting JavaMailDemoApplication using Java 11.0.16.1 on 192.168.0.101 with PID 2359 (/Users/ws/IdeaProjects/2.demo/java-demo/target/classes started by ws in /Users/ws/IdeaProjects/2.demo/java-demo)
+2023-03-08 21:28:54.999 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -The following 1 profile is active: "dev"
+2023-03-08 21:28:55.031 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-08 21:28:55.032 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-08 21:28:55.797 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 9999 (http)
+2023-03-08 21:28:55.808 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:28:55.808 [restartedMain] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2023-03-08 21:28:55.808 [restartedMain] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-03-08 21:28:55.853 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2023-03-08 21:28:55.853 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 821 ms
+2023-03-08 21:28:55.906 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet创建
+2023-03-08 21:28:55.998 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Starting...
+2023-03-08 21:28:56.089 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Start completed.
+2023-03-08 21:28:56.091 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Starting...
+2023-03-08 21:28:56.112 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Start completed.
+2023-03-08 21:28:56.112 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource - add a datasource named [master] success
+2023-03-08 21:28:56.112 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource - add a datasource named [slave_1] success
+2023-03-08 21:28:56.113 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource initial loaded [2] datasource,primary datasource named [master]
+2023-03-08 21:28:56.696 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer -LiveReload server is running on port 35729
+2023-03-08 21:28:56.715 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:28:56.736 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 9999 (http) with context path ''
+2023-03-08 21:28:56.746 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Started JavaMailDemoApplication in 2.055 seconds (JVM running for 2.55)
+2023-03-08 21:29:00.077 [http-nio-9999-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-08 21:29:00.078 [http-nio-9999-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2023-03-08 21:29:00.079 [http-nio-9999-exec-1] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 1 ms
+2023-03-08 21:29:00.082 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 请求filter1
+2023-03-08 21:29:00.082 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 请求filter2
+2023-03-08 21:29:00.082 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 请求filter3
+2023-03-08 21:29:00.088 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:29:00.089 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:29:00.110 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> postHandle返回modelAndView之前
+2023-03-08 21:29:00.110 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> postHandle返回modelAndView之前
+2023-03-08 21:29:00.110 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:29:00.110 [http-nio-9999-exec-1] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:29:00.111 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 响应filter3
+2023-03-08 21:29:00.111 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 响应filter2
+2023-03-08 21:29:00.111 [http-nio-9999-exec-1] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 响应filter1
+2023-03-08 21:29:16.570 [http-nio-9999-exec-2] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 请求filter1
+2023-03-08 21:29:16.570 [http-nio-9999-exec-2] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 请求filter2
+2023-03-08 21:29:16.571 [http-nio-9999-exec-2] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 请求filter3
+2023-03-08 21:29:16.571 [http-nio-9999-exec-2] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:29:16.571 [http-nio-9999-exec-2] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:29:16.572 [http-nio-9999-exec-2] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> postHandle返回modelAndView之前
+2023-03-08 21:29:16.572 [http-nio-9999-exec-2] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> postHandle返回modelAndView之前
+2023-03-08 21:29:16.572 [http-nio-9999-exec-2] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:29:16.572 [http-nio-9999-exec-2] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:29:16.572 [http-nio-9999-exec-2] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 响应filter3
+2023-03-08 21:29:16.572 [http-nio-9999-exec-2] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 响应filter2
+2023-03-08 21:29:16.573 [http-nio-9999-exec-2] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 响应filter1
+2023-03-08 21:29:50.678 [http-nio-9999-exec-4] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 请求filter1
+2023-03-08 21:29:50.678 [http-nio-9999-exec-4] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 请求filter2
+2023-03-08 21:29:50.678 [http-nio-9999-exec-4] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 请求filter3
+2023-03-08 21:29:50.679 [http-nio-9999-exec-4] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:29:50.679 [http-nio-9999-exec-4] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:29:50.680 [http-nio-9999-exec-4] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> postHandle返回modelAndView之前
+2023-03-08 21:29:50.680 [http-nio-9999-exec-4] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> postHandle返回modelAndView之前
+2023-03-08 21:29:50.680 [http-nio-9999-exec-4] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:29:50.680 [http-nio-9999-exec-4] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:29:50.680 [http-nio-9999-exec-4] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 响应filter3
+2023-03-08 21:29:50.680 [http-nio-9999-exec-4] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 响应filter2
+2023-03-08 21:29:50.680 [http-nio-9999-exec-4] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 响应filter1
+2023-03-08 21:30:03.898 [http-nio-9999-exec-5] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 请求filter1
+2023-03-08 21:30:03.899 [http-nio-9999-exec-5] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 请求filter2
+2023-03-08 21:30:03.899 [http-nio-9999-exec-5] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 请求filter3
+2023-03-08 21:30:03.899 [http-nio-9999-exec-5] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:30:03.899 [http-nio-9999-exec-5] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> preHandle请求URL：http://localhost:9999/async
+2023-03-08 21:30:03.900 [http-nio-9999-exec-5] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> postHandle返回modelAndView之前
+2023-03-08 21:30:03.900 [http-nio-9999-exec-5] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> postHandle返回modelAndView之前
+2023-03-08 21:30:03.900 [http-nio-9999-exec-5] INFO  c.e.j.i.LogHandlerInterceptor -【拦截器】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:30:03.900 [http-nio-9999-exec-5] INFO  c.e.j.i.LogHandlerInterceptor2 -【拦截器2】-> afterCompletion执行完请求方法完全返回之后
+2023-03-08 21:30:03.900 [http-nio-9999-exec-5] INFO  c.e.javamaildemo.filter.YFilter -【filter】-> 响应filter3
+2023-03-08 21:30:03.900 [http-nio-9999-exec-5] INFO  c.e.javamaildemo.filter.MyFilter2 -【filter】-> 响应filter2
+2023-03-08 21:30:03.900 [http-nio-9999-exec-5] INFO  c.e.javamaildemo.filter.CFilter -【filter】-> 响应filter1
+2023-03-08 21:31:25.811 [SpringApplicationShutdownHook] INFO  c.e.javamaildemo.listener.MyListener -servlet销毁
+2023-03-08 21:31:25.817 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource start closing ....
+2023-03-08 21:31:25.818 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -master - Shutdown initiated...
+2023-03-08 21:31:25.821 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -master - Shutdown completed.
+2023-03-08 21:31:25.821 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown initiated...
+2023-03-08 21:31:25.825 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown completed.
+2023-03-08 21:31:25.825 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource all closed success,bye
+2023-03-08 21:31:31.686 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Starting JavaMailDemoApplication using Java 11.0.16.1 on 192.168.0.101 with PID 2417 (/Users/ws/IdeaProjects/2.demo/java-demo/target/classes started by ws in /Users/ws/IdeaProjects/2.demo/java-demo)
+2023-03-08 21:31:31.687 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -The following 1 profile is active: "dev"
+2023-03-08 21:31:31.734 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-08 21:31:31.735 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-08 21:31:32.560 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-08 21:31:32.562 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$562f6fd3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-08 21:31:32.571 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-08 21:31:32.762 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 9999 (http)
+2023-03-08 21:31:32.768 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:31:32.768 [restartedMain] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2023-03-08 21:31:32.768 [restartedMain] INFO  o.a.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.69]
+2023-03-08 21:31:32.810 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2023-03-08 21:31:32.810 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 1075 ms
+2023-03-08 21:31:32.874 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Starting...
+2023-03-08 21:31:32.958 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -master - Start completed.
+2023-03-08 21:31:32.959 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Starting...
+2023-03-08 21:31:32.981 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Start completed.
+2023-03-08 21:31:32.981 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource - add a datasource named [master] success
+2023-03-08 21:31:32.982 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource - add a datasource named [slave_1] success
+2023-03-08 21:31:32.982 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource initial loaded [2] datasource,primary datasource named [master]
+2023-03-08 21:31:33.075 [restartedMain] INFO  c.e.javamaildemo.listener.MyListener -servlet创建
+2023-03-08 21:31:33.854 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer -LiveReload server is running on port 35729
+2023-03-08 21:31:33.858 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver -Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-03-08 21:31:33.908 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-9999"]
+2023-03-08 21:31:33.927 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat started on port(s): 9999 (http) with context path ''
+2023-03-08 21:31:33.943 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Started JavaMailDemoApplication in 2.786 seconds (JVM running for 3.966)
+2023-03-08 21:31:34.073 [RMI TCP Connection(3)-192.168.0.101] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-08 21:31:34.074 [RMI TCP Connection(3)-192.168.0.101] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
+2023-03-08 21:31:34.075 [RMI TCP Connection(3)-192.168.0.101] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 1 ms
