@@ -1,24 +1,45 @@
 package com.example.javamaildemo.controller;
 
-import cn.hutool.jwt.JWT;
-import cn.hutool.jwt.JWTUtil;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.javamaildemo.entity.Person;
 import com.example.javamaildemo.entity.UserInfo;
+import com.example.javamaildemo.service.LoginService;
+import com.example.javamaildemo.service.PersonService;
+import com.example.javamaildemo.utils.JwtUtils;
+import com.example.javamaildemo.utils.R;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping
 public class LoginController {
-    @PostMapping("/token")
-    public void login(UserInfo userInfo, @RequestHeader("Authorization") String token) {
-        // 1.身份认证 通过
-        // 2.无token -> createToken
-        // 3.有token -> checkToken (可以放在拦截器做check)
-        JWT jwt = JWTUtil.parseToken(token);
-        log.info(jwt.toString());
+    @Autowired
+    LoginService loginService;
+
+    @Autowired
+    PersonService personService;
+
+    @PostMapping("/login")
+    public R<String> login(UserInfo userInfo) {
+        String userName = userInfo.getUserName();
+        String password = userInfo.getPassword();
+        // 1.身份认证通过 2.创建token
+        Person user = loginService.getUserInfo(userName, password);
+        if (user != null) {
+            String token = JwtUtils.create(userName, password);
+            return R.ok(token);
+        }
+        return R.error(500, "用户不存在");
     }
+
+    @GetMapping("/page")
+    public R<IPage> page() {
+        IPage<Person> page = personService.getBaseMapper().selectPage(new Page<>(1, 10), null);
+        return R.ok(page);
+    }
+
 }
