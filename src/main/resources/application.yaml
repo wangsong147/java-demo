@@ -1,8 +1,3 @@
-# 指定具体包的日志级别
-logging:
-  config: classpath:logback-spring.xml
-  level:
-    com.example.javamaildemo: debug
 spring:
   profiles:
     active: dev

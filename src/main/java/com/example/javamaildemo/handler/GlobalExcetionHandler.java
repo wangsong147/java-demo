@@ -3,14 +3,15 @@ package com.example.javamaildemo.handler;
 import com.example.javamaildemo.utils.R;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@RestController
+@RestControllerAdvice
 public class GlobalExcetionHandler {
 
-    @ExceptionHandler(RuntimeException.class)
-    public R handleLoginExcpetion(RuntimeException e)
+    @ExceptionHandler(Exception.class)
+    public R handleLoginException(RuntimeException e)
     {
-        return R.error(500,e.getMessage());
+        return R.error(5000,e.getMessage());
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.javamaildemo.filter;
+package com.example.javamaildemo.security;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -12,13 +12,11 @@ import java.io.IOException;
 
 @Slf4j
 @Component
-public class YFilter extends OncePerRequestFilter {
-
+public class XssFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-//        log.info("【filter】-> 请求filter3");
-        filterChain.doFilter(request, response);
-//        log.info("【filter】-> 响应filter3");
+        // 用xss wrapper包装一下request，把所有参数header都转义，后面controller接收到的request其实就是XssRequest了
+        XssHttpServletRequestWrapper xssRequest = new XssHttpServletRequestWrapper(request);// 这里相当于把request的信息传递给Xss了
+        filterChain.doFilter(xssRequest,response);
     }
-
 }

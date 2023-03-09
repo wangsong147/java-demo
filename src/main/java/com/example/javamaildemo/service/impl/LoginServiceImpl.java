@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class LoginServiceImpl implements LoginService {
     @Override
     public Person getUserInfo(String userName, String password) {
-        return null;
+        return new Person(999L,"aa",33);
     }
 
     @Override

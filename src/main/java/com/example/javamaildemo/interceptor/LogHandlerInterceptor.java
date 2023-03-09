@@ -26,8 +26,8 @@ public class LogHandlerInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-        StringBuffer requestURL = request.getRequestURL();
-        log.info("【拦截器】-> preHandle请求URL：" + requestURL.toString());
+//        StringBuffer requestURL = request.getRequestURL();
+//        log.info("【拦截器】-> preHandle请求URL：" + requestURL.toString());
         return true;
     }
 
@@ -38,7 +38,7 @@ public class LogHandlerInterceptor implements HandlerInterceptor {
      */
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
-        log.info("【拦截器】-> postHandle返回modelAndView之前");
+//        log.info("【拦截器】-> postHandle返回modelAndView之前");
     }
 
     /**
@@ -49,6 +49,6 @@ public class LogHandlerInterceptor implements HandlerInterceptor {
      */
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
-        log.info("【拦截器】-> afterCompletion执行完请求方法完全返回之后");
+//        log.info("【拦截器】-> afterCompletion执行完请求方法完全返回之后");
     }
 }

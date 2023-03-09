@@ -1,3 +1,8 @@
+# 指定具体包的日志级别
+#logging:
+#  config: classpath:logback-spring.xml
+#  level:
+#    com.example.javamaildemo: debug
 server:
   port: 9999
 spring:
@@ -13,13 +18,12 @@ spring:
           driver-class-name: org.postgresql.Driver
           url: jdbc:postgresql://localhost:5432/postgres?currentSchema=wstest&characterEncoding=utf-8&serverTimezone=GMT%2B8
           username: postgres
-          password: ws810216
-    # 修改数据库密码：alter user admin with password 'postgres';
+          password: postgres
         slave_1:
           driver-class-name: org.postgresql.Driver
           url: jdbc:postgresql://localhost:5432/postgres?currentSchema=wstest&characterEncoding=utf-8&serverTimezone=GMT%2B8
           username: postgres
-          password: ws810216
+          password: postgres
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

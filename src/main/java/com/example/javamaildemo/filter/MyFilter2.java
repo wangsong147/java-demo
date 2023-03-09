@@ -16,9 +16,9 @@ public class MyFilter2 extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        log.info("【filter】-> 请求filter2");
+//        log.info("【filter】-> 请求filter2");
         filterChain.doFilter(request, response);
-        log.info("【filter】-> 响应filter2");
+//        log.info("【filter】-> 响应filter2");
     }
 
 }

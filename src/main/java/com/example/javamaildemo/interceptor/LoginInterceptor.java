@@ -1,5 +1,8 @@
 package com.example.javamaildemo.interceptor;
 
+import cn.hutool.jwt.JWT;
+import cn.hutool.jwt.JWTUtil;
+import com.alibaba.fastjson.JSON;
 import com.example.javamaildemo.utils.JwtUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -17,13 +20,15 @@ public class LoginInterceptor implements HandlerInterceptor {
         String token = request.getHeader("Authorization");
         if (StringUtils.isNotBlank(token)) {
             try {
-                JwtUtils.parse(token);
+                JWT jwt = JWTUtil.parseToken(token);
+                log.info(JSON.toJSONString(jwt.getPayload()));
+                log.info(JSON.toJSONString(jwt.getPayload("userName")));
+                return true;
             } catch (Exception e) {
                 throw new RuntimeException("token失效");
             }
         }
-        return true;
-
+        throw new RuntimeException("token失效");
     }
 
     @Override
