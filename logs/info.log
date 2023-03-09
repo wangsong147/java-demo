@@ -422,6 +422,13 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2023-03-08 21:31:34.073 [RMI TCP Connection(3)-192.168.0.101] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring DispatcherServlet 'dispatcherServlet'
 2023-03-08 21:31:34.074 [RMI TCP Connection(3)-192.168.0.101] INFO  o.s.web.servlet.DispatcherServlet -Initializing Servlet 'dispatcherServlet'
 2023-03-08 21:31:34.075 [RMI TCP Connection(3)-192.168.0.101] INFO  o.s.web.servlet.DispatcherServlet -Completed initialization in 1 ms
+2023-03-08 21:38:29.481 [SpringApplicationShutdownHook] INFO  c.e.javamaildemo.listener.MyListener -servlet销毁
+2023-03-08 21:38:29.495 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource start closing ....
+2023-03-08 21:38:29.495 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -master - Shutdown initiated...
+2023-03-08 21:38:29.498 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -master - Shutdown completed.
+2023-03-08 21:38:29.498 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown initiated...
+2023-03-08 21:38:29.501 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -slave_1 - Shutdown completed.
+2023-03-08 21:38:29.501 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource -dynamic-datasource all closed success,bye
 2023-03-09 08:39:30.733 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -Starting JavaMailDemoApplication using Java 11.0.16.1 on DESKTOP-MLO40TT with PID 11712 (R:\1_ws_projects\java-demo\target\classes started by JK in R:\1_ws_projects\java-demo)
 2023-03-09 08:39:30.743 [restartedMain] INFO  c.e.j.JavaMailDemoApplication -The following 1 profile is active: "dev"
 2023-03-09 08:39:30.950 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable

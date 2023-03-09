@@ -4,26 +4,30 @@
 #  level:
 #    com.example.javamaildemo: debug
 server:
-  port: 9999
+  port: 6001
 spring:
   mail:
     host: smtp.163.com
     username: song5_wang@163.com
     password: FIUECJDZXERBYFNZ
   datasource:
-    dynamic:
-      primary: master
-      datasource:
-        master:
-          driver-class-name: org.postgresql.Driver
-          url: jdbc:postgresql://localhost:5432/postgres?currentSchema=wstest&characterEncoding=utf-8&serverTimezone=GMT%2B8
-          username: postgres
-          password: postgres
-        slave_1:
-          driver-class-name: org.postgresql.Driver
-          url: jdbc:postgresql://localhost:5432/postgres?currentSchema=wstest&characterEncoding=utf-8&serverTimezone=GMT%2B8
-          username: postgres
-          password: postgres
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database.coding-future.com:3306/postgres
+    username: erp_220504_one
+    password: 123456
+#    dynamic:
+#      primary: master
+#      datasource:
+#        master:
+#          driver-class-name: org.postgresql.Driver
+#          url: jdbc:postgresql://localhost:5432/postgres?currentSchema=wstest&characterEncoding=utf-8&serverTimezone=GMT%2B8
+#          username: postgres
+#          password: postgres
+#        slave_1:
+#          driver-class-name: org.postgresql.Driver
+#          url: jdbc:postgresql://localhost:5432/postgres?currentSchema=wstest&characterEncoding=utf-8&serverTimezone=GMT%2B8
+#          username: postgres
+#          password: postgres
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
