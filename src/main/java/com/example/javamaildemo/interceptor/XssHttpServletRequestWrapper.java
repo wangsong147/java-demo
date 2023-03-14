@@ -1,4 +1,4 @@
-package com.example.javamaildemo.security;
+package com.example.javamaildemo.interceptor;
 
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;

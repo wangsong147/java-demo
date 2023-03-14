@@ -26,7 +26,16 @@ public class MyServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         log.info("Servlet 开始处理 GET 方法");
         PrintWriter writer = resp.getWriter();
-        writer.println("Hello Servlet");
+        writer.println("GET: Hello Servlet");
+        writer.flush();
+        writer.close();
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        log.info("Servlet 开始处理 POST 方法");
+        PrintWriter writer = resp.getWriter();
+        writer.println("POST: Hello Servlet");
         writer.flush();
         writer.close();
     }

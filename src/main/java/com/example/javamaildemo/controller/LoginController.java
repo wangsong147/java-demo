@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Slf4j
 @RestController
 public class LoginController {
@@ -27,7 +29,6 @@ public class LoginController {
 
     @PostMapping("/login")
     public R<String> login(UserInfo userInfo, @RequestHeader("Authorization") String headerToken) {
-//        int i = 1/0;
         log.info(headerToken);
         String userName = userInfo.getUserName();
         String password = userInfo.getPassword();
