@@ -1,5 +1,6 @@
 package com.example.javamaildemo.security;
 
+import cn.hutool.crypto.digest.MD5;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.example.javamaildemo.entity.Person;
 import com.example.javamaildemo.mapper.PersonMapper;
@@ -34,8 +35,9 @@ public class MyUserDetailsService implements UserDetailsService {
         if (person == null) {
             throw new UsernameNotFoundException("用户名不存在");
         }
-        List<GrantedAuthority> authorities = AuthorityUtils.commaSeparatedStringToAuthorityList("student,rapper");
-        return new User(person.getName(), MD5Encoder.encode(person.getPassword().getBytes()), authorities);
+        // 微服务 - 权限要解析token去redis里查
+        List<GrantedAuthority> authorities = AuthorityUtils.commaSeparatedStringToAuthorityList("admins,ROLE_teacher,student,rapper");
+        return new User(person.getName(), MD5.create().digestHex(person.getPassword()), authorities);
     }
 
 }

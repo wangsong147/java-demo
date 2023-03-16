@@ -10,13 +10,13 @@ public class StreamController {
 
     static {
         StreamController.list = new ArrayList<>();
-        list.add(new Person(1L, "老莫", 35));
-        list.add(new Person(3L, "李三", 20));
-        list.add(new Person(3L, "李三", 20));
-        list.add(new Person(2L, "王二", 20));
+        list.add(new Person(1L, "老莫", 35, "123"));
+        list.add(new Person(3L, "李三", 20,"123"));
+        list.add(new Person(3L, "李三", 20,"123"));
+        list.add(new Person(2L, "王二", 20,"123"));
 //        list.add(null);list.add(null);
-        list.add(new Person(4L, "启强", 50));
-        list.add(new Person(4L, "启强", 50));
+        list.add(new Person(4L, "启强", 50,"123"));
+        list.add(new Person(4L, "启强", 50,"123"));
     }
 
     public static void main(String[] args) {
