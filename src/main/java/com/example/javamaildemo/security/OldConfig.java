@@ -15,7 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import javax.annotation.Resource;
 
 @Configuration
-public class NewConfig extends WebSecurityConfigurerAdapter {
+public class OldConfig extends WebSecurityConfigurerAdapter {
     @Resource(name = "myUserDetails")
     MyUserDetailsService userDetails;
 

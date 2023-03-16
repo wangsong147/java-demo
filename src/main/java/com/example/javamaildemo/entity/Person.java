@@ -29,6 +29,9 @@ public class Person {
     @TableField("name")
     private String name;
 
+    @TableField("password")
+    private String password;
+
     @TableField("age")
     private int age;
 //    默认1是已删除，delete/remove方法会默认改成update语句
