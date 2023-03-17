@@ -5,10 +5,12 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
+//@ServletComponentScan
 @EnableAsync
 @SpringBootApplication
-@ServletComponentScan
+@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class JavaMailDemoApplication {
 
     public static void main(String[] args) {

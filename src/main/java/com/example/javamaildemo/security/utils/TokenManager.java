@@ -24,12 +24,12 @@ public class TokenManager {
                 .compact();
     }
 
-    public static String getUserInfoFromToken(String token){
+    public static String getUserInfoFromToken(String token) {
         return Jwts.parser().setSigningKey(KEY).parseClaimsJws(token).getBody().getSubject();
     }
 
     // 获取jwt中间的载荷部分
-    public static Claims getClaims(String token){
+    public static Claims getClaims(String token) {
         return Jwts.parser().setSigningKey(KEY).parseClaimsJws(token).getBody();
     }
 

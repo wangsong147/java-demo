@@ -10,10 +10,15 @@ spring:
     host: smtp.163.com
     username: song5_wang@163.com
     password: FIUECJDZXERBYFNZ
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://database.coding-future.com:3306/postgres
+#    username: erp_220504_one
+#    password: 123456
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://database.coding-future.com:3306/postgres
-    username: erp_220504_one
+    url: jdbc:mysql://192.168.170.181.com:3306/wstest
+    username: root
     password: 123456
 #    dynamic:
 #      primary: master

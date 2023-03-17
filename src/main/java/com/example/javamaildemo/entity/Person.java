@@ -17,7 +17,7 @@ public class Person {
     // 1.要添加主键生成配置 2.添加@KeySequence(value = "person_id_seq")
     // 原理是：先select nextval('person_id_seq')查到了下一个id是什么，然后赋值给id（执行了两次sql）
     //    --> 且配置了主键自动生策略,所以可以在id为null的时候从seq中generate主键
-     @TableId(value = "id", type = IdType.INPUT)
+    @TableId(value = "id", type = IdType.INPUT)
     // @TableId(value = "id", type = IdType.UUID)
     // 底层默认雪花算法, 但是实体上如果设置了id,则以用户输入为准
     // @TableId(value = "id", type = IdType.NONE)
