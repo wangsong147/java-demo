@@ -27,8 +27,6 @@ public class OldConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // 自定义的没有权限页面403
-        http.exceptionHandling().accessDeniedPage("/unauth.html");
         http.formLogin() // 自定义登录页面
                 .loginPage("/login.html") // 登录表单页面
                 .loginProcessingUrl("/user/login") // 表单数据 上传到哪个接口(security写好了这个接口，我们只需配置路径)
@@ -43,6 +41,11 @@ public class OldConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/security/test3").hasAnyRole("ROLE_")
                 .anyRequest().authenticated() // 所有请求都可以访问(get,post...?)
                 .and().csrf().disable(); // 关闭csrf
+
+        // 注销页面
+        http.logout().logoutUrl("/security/logout").logoutSuccessUrl("/index").permitAll();
+        // 自定义的没有权限页面403
+        http.exceptionHandling().accessDeniedPage("/unauth.html");
     }
 
     @Override
