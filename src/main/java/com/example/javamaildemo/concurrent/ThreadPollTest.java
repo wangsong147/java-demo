@@ -12,7 +12,7 @@ public class ThreadPollTest {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         // 指定自己要什么事情
         executorService.execute(new NumberThread());// 多用于runnabel，重写没有返回值的run方法
-        executorService.submit();// 多用于callable，
+        //executorService.submit();// 多用于callable，
     }
 
 

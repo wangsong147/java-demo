@@ -26,11 +26,11 @@ public class SecurityController {
     public void test3() {
     }
 
-    @PostMapping("/login")
+    @PostMapping("/loginkn")
     public void test4() {
     }
 
-    @GetMapping("/logout")
+    @GetMapping("/logoutt")
     public void test5() {
     }
 }

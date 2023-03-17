@@ -10,7 +10,7 @@ import cn.hutool.core.date.LocalDateTimeUtil;
 import cn.hutool.jwt.JWT;
 import cn.hutool.jwt.JWTPayload;
 import cn.hutool.jwt.JWTUtil;
-import com.baomidou.dynamic.datasource.toolkit.CryptoUtils;
+//import com.baomidou.dynamic.datasource.toolkit.CryptoUtils;
 import com.example.javamaildemo.common.Constant;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;

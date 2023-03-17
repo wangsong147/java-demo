@@ -2,6 +2,7 @@ package com.example.javamaildemo.mapper;
 
 import com.example.javamaildemo.entity.Users;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
 * @author wangsong
@@ -9,6 +10,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2023-03-17 09:48:17
 * @Entity com.example.javamaildemo.entity.Users
 */
+@Mapper
 public interface UsersMapper extends BaseMapper<Users> {
 
 }
