@@ -2,24 +2,14 @@ package com.example.javamaildemo.utils;
 
 import cn.hutool.cache.Cache;
 import cn.hutool.cache.CacheUtil;
-import cn.hutool.cache.impl.FIFOCache;
-import cn.hutool.captcha.CaptchaUtil;
 import cn.hutool.core.date.DateField;
 import cn.hutool.core.date.DateTime;
-import cn.hutool.core.date.LocalDateTimeUtil;
 import cn.hutool.jwt.JWT;
 import cn.hutool.jwt.JWTPayload;
 import cn.hutool.jwt.JWTUtil;
-//import com.baomidou.dynamic.datasource.toolkit.CryptoUtils;
 import com.example.javamaildemo.common.Constant;
 import lombok.extern.slf4j.Slf4j;
-import lombok.val;
-import org.postgresql.shaded.com.ongres.scram.common.util.CryptoUtil;
-import org.springframework.stereotype.Service;
 
-import java.nio.charset.StandardCharsets;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,9 +19,9 @@ public class JwtUtils {
     public static String create(String userName) {
         DateTime now = DateTime.now();
         DateTime newTime = now.offsetNew(DateField.SECOND, 30);
-        log.info("开始时间:{}-过期时间:{}",now,newTime);
+        log.info("开始时间:{}-过期时间:{}", now, newTime);
 
-        Map<String,Object> payload = new HashMap<>();
+        Map<String, Object> payload = new HashMap<>();
         //签发时间：当前时间
         payload.put(JWTPayload.ISSUED_AT, now);
         //过期时间: 10分钟后

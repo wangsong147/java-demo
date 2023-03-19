@@ -1,9 +1,7 @@
-package com.example.javamaildemo.security.utils;
+package com.example.javamaildemo.security.microservice.util;
 
-import cn.hutool.core.bean.BeanUtil;
 import io.jsonwebtoken.*;
 import lombok.Data;
-import org.apache.coyote.http11.filters.SavedRequestInputFilter;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -29,7 +27,7 @@ public class TokenManager {
     }
 
     // 获取jwt中间的载荷部分
-    public static Claims getClaims(String token) {
+    private static Claims getClaims(String token) {
         return Jwts.parser().setSigningKey(KEY).parseClaimsJws(token).getBody();
     }
 

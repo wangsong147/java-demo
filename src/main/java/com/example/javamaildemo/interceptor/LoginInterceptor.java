@@ -20,26 +20,27 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-        String token = request.getHeader("Authorization");
-
-        if (StringUtils.isNotBlank(token)) {
-            try {
-                //解析token
-                JWT jwt = JWTUtil.parseToken(token);
-                boolean validate = jwt.setKey(Constant.JWT_KEY.getBytes()).validate(0);
-                //验证合法性+时间
-                if (!validate) {
-                    response.setStatus(401);
-                    return false;
-                }
-                return true;
-            } catch (Exception e) {
-                throw new RuntimeException(e.getMessage());
-            }
-        }
-        //没有token，直接返回401
-        response.setStatus(401);
-        return false;
+//        String token = request.getHeader("Authorization");
+//
+//        if (StringUtils.isNotBlank(token)) {
+//            try {
+//                //解析token
+//                JWT jwt = JWTUtil.parseToken(token);
+//                boolean validate = jwt.setKey(Constant.JWT_KEY.getBytes()).validate(0);
+//                //验证合法性+时间
+//                if (!validate) {
+//                    response.setStatus(401);
+//                    return false;
+//                }
+//                return true;
+//            } catch (Exception e) {
+//                throw new RuntimeException(e.getMessage());
+//            }
+//        }
+//        //没有token，直接返回401
+//        response.setStatus(401);
+//        return false;
+        return  true;
     }
 
     @Override

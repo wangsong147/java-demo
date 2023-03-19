@@ -26,11 +26,19 @@ public class SecurityController {
     public void test3() {
     }
 
-    @PostMapping("/loginkn")
-    public void test4() {
+    @PreAuthorize("hasAnyAuthority('admins')")
+    @GetMapping("/query")
+    public String test4() {
+        return "query";
     }
 
-    @GetMapping("/logoutt")
-    public void test5() {
+    @GetMapping("/login")
+    public String test5() {
+        return "security/login";
+    }
+
+    @GetMapping("/logout")
+    public String logout() {
+        return "logout successful: redirect to index.html";
     }
 }
