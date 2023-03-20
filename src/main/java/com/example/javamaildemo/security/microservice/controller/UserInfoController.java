@@ -15,7 +15,7 @@ public class UserInfoController {
     private UsersService usersService;
     @GetMapping("/info")
     public R info(){
-        String username = (String)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
         Map<String,Object> userInfo = usersService.getUserInfo(username);
         return R.ok().data(userInfo);
     }
