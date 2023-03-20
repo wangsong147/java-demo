@@ -24,24 +24,24 @@ public class LoginController {
     @Autowired
     private UsersService usersService;
 
-    @GetMapping("/login")
-    public ResultMessage<String> login() {
-        return ResultMessage.ok("ok_");
-    }
-
-    @PostMapping("/login")
-    public ResultMessage<String> loginn(UserInfo userInfo, @RequestHeader("Authorization") String headerToken) {
-        log.info(headerToken);
-        String userName = userInfo.getUserName();
-        String password = userInfo.getPassword();
-        // 1.身份认证通过 2.创建token
-        Person user = loginService.getUserInfo(userName, password);
-        if (user != null) {
-            String token = JwtUtils.create(userName);
-            return ResultMessage.ok(token);
-        }
-        return ResultMessage.error(500, "用户不存在");
-    }
+//    @GetMapping("/login")
+//    public ResultMessage<String> login() {
+//        return ResultMessage.ok("ok_");
+//    }
+//
+//    @PostMapping("/login")
+//    public ResultMessage<String> loginn(UserInfo userInfo, @RequestHeader("Authorization") String headerToken) {
+//        log.info(headerToken);
+//        String userName = userInfo.getUserName();
+//        String password = userInfo.getPassword();
+//        // 1.身份认证通过 2.创建token
+//        Person user = loginService.getUserInfo(userName, password);
+//        if (user != null) {
+//            String token = JwtUtils.create(userName);
+//            return ResultMessage.ok(token);
+//        }
+//        return ResultMessage.error(500, "用户不存在");
+//    }
 
     @GetMapping("/page")
     public ResultMessage<IPage> page() {

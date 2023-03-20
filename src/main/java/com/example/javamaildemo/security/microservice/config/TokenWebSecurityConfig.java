@@ -5,14 +5,16 @@ import com.example.javamaildemo.security.microservice.filter.TokenAuthFilter;
 import com.example.javamaildemo.security.microservice.filter.TokenLoginFilter;
 import com.example.javamaildemo.security.microservice.security.DefaultPasswordEncoder;
 import com.example.javamaildemo.security.microservice.security.LogoutHandle;
-import com.example.javamaildemo.security.microservice.util.TokenManager;
 import com.example.javamaildemo.security.microservice.security.UnauthEntryPoint;
+import com.example.javamaildemo.security.microservice.util.TokenManager;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configurers.DefaultLoginPageConfigurer;
+import org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter;
 
 import javax.annotation.Resource;
 
@@ -29,6 +31,9 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+//        http.addFilter(new WebAsyncManagerIntegrationFilter());
+//        http.apply(new DefaultLoginPageConfigurer<>());
+
         http.exceptionHandling()
                 .authenticationEntryPoint(new UnauthEntryPoint())
                 .and()
@@ -48,7 +53,7 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         // 不需要认证的路径，可以直接访问
-        web.ignoring().antMatchers("/api/**");
+        web.ignoring().antMatchers("/login");
     }
 
     @Override

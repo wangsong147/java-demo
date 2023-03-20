@@ -14,6 +14,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -34,9 +35,11 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
         this.redisTemplate = redisTemplate;
         this.authenticationManager = authenticationManager;
         this.tokenManager = tokenManager;
+        this.setPostOnly(false);
+        // 拦截哪个请求
+        this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/login","POST"));
     }
 
-    // 这个方法是为了重写successful方法利用设置token才重写的（基于web的验证默认走的是security的username..filter）
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         try {

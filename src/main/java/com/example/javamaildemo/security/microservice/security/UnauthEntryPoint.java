@@ -19,6 +19,7 @@ import java.io.IOException;
 public class UnauthEntryPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        ResponseUtil.out(response, R.error());
+        // 返回前端一个提示，让前端做页面跳转
+        ResponseUtil.out(response, R.error().message("没有权限"));
     }
 }
