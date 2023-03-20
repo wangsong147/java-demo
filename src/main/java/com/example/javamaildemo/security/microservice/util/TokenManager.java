@@ -26,6 +26,21 @@ public class TokenManager {
         return Jwts.parser().setSigningKey(KEY).parseClaimsJws(token).getBody().getSubject();
     }
 
+    public  String makeToken(String userName) {
+        return Jwts.builder()
+                .setSubject(userName)
+                .signWith(SignatureAlgorithm.HS256, KEY)
+                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
+                // 当payload过长时可以选择压缩载荷
+                .compressWith(CompressionCodecs.GZIP)
+                .compact();
+    }
+
+    public  String getUserInfo(String token) {
+        return Jwts.parser().setSigningKey(KEY).parseClaimsJws(token).getBody().getSubject();
+    }
+
+
     // 获取jwt中间的载荷部分
     private static Claims getClaims(String token) {
         return Jwts.parser().setSigningKey(KEY).parseClaimsJws(token).getBody();

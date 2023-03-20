@@ -1,5 +1,6 @@
-package com.example.javamaildemo.security.microservice.util;
+package com.example.javamaildemo.security.microservice.security;
 
+import com.example.javamaildemo.security.microservice.util.R;
 import com.example.javamaildemo.security.microservice.util.ResponseUtil;
 import com.example.javamaildemo.utils.ResultMessage;
 import org.springframework.security.core.AuthenticationException;

@@ -1,5 +1,6 @@
-package com.example.javamaildemo.security.microservice.util;
+package com.example.javamaildemo.security.microservice.security;
 
+import com.example.javamaildemo.security.microservice.util.R;
 import com.example.javamaildemo.security.microservice.util.ResponseUtil;
 import com.example.javamaildemo.security.microservice.util.TokenManager;
 import com.example.javamaildemo.utils.ResultMessage;
@@ -22,6 +23,7 @@ public class LogoutHandle implements LogoutHandler {
         // logout也是一个请求
         String token = request.getHeader("token");
         if (token != null) {
+            // 前端把localstorage中的token也删除掉
             // 删除token: k->token,v->权限
             String username = TokenManager.getUserInfoFromToken(token);
             redisTemplate.delete(username);

@@ -6,6 +6,8 @@ import com.example.javamaildemo.service.UsersService;
 import com.example.javamaildemo.mapper.UsersMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 /**
 * @author wangsong
 * @description 针对表【users】的数据库操作Service实现
@@ -15,6 +17,10 @@ import org.springframework.stereotype.Service;
 public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
     implements UsersService{
 
+    @Override
+    public Map<String, Object> getUserInfo(String usersService) {
+        return null;
+    }
 }
 
 
