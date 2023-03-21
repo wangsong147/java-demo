@@ -10,6 +10,8 @@ import com.example.javamaildemo.utils.JwtUtils;
 import com.example.javamaildemo.utils.ResultMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -43,6 +45,8 @@ public class LoginController {
 //        return ResultMessage.error(500, "用户不存在");
 //    }
 
+    @PreAuthorize("hasAnyAuthority('p1','p20','p9')")
+//    @Secured({"ROLE_admin"})
     @GetMapping("/page")
     public ResultMessage<IPage> page() {
         return ResultMessage.ok(usersService.getBaseMapper().selectPage(new Page<>(1, 10), null));

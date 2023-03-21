@@ -1,6 +1,7 @@
 package com.example.javamaildemo.security.microservice.filter;
 
 import com.example.javamaildemo.security.microservice.util.TokenManager;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -23,6 +24,7 @@ import java.util.List;
  * new UsernamePasswordAuthenticationToken(username, token, authorities);
  * set到上下文中
  */
+@Slf4j
 public class TokenAuthFilter extends BasicAuthenticationFilter {
     private TokenManager tokenManager;
     private RedisTemplate redisTemplate;
@@ -52,6 +54,7 @@ public class TokenAuthFilter extends BasicAuthenticationFilter {
             List<String> permissionValueList = (List<String>) redisTemplate.opsForValue().get(username);
             Collection<GrantedAuthority> authorities = new ArrayList<>();
             for (String permissionValue : permissionValueList) {
+                log.info("permissionValue: {}", permissionValue);
                 // 转换
                 SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(permissionValue);
                 authorities.add(simpleGrantedAuthority);

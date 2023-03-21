@@ -37,7 +37,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
         this.tokenManager = tokenManager;
         this.setPostOnly(false);
         // 拦截哪个请求
-        this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/login","POST"));
+        this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/admin/login","POST"));
     }
 
     @Override
@@ -63,6 +63,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
         SecurityUser user = (SecurityUser) authResult.getPrincipal();
         String username = user.getCurrentUserInfo().getUsername();
         List<String> authorities = user.getPermissionValueList();
+        log.info("loginFilter查数据库权限：{}",authorities);
         // 生成token
         String token = TokenManager.createToken(username);
         // 存redis

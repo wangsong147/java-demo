@@ -10,7 +10,7 @@ public class Md5 {
     }
 
     public static void main(String[] args) {
-        CharSequence password = "wwwww";
+        CharSequence password = "admin";
         System.out.println(MD5.create().digestHex(password.toString()));
     }
 }

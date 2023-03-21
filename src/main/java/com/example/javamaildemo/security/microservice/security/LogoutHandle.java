@@ -4,6 +4,8 @@ import com.example.javamaildemo.security.microservice.util.R;
 import com.example.javamaildemo.security.microservice.util.ResponseUtil;
 import com.example.javamaildemo.security.microservice.util.TokenManager;
 import com.example.javamaildemo.utils.ResultMessage;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
@@ -13,10 +15,13 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@Component
+@Slf4j
 public class LogoutHandle implements LogoutHandler {
-    @Resource
     private RedisTemplate redisTemplate;
+
+    public LogoutHandle(RedisTemplate redisTemplate) {
+        this.redisTemplate = redisTemplate;
+    }
 
     @Override
     public void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
@@ -26,6 +31,7 @@ public class LogoutHandle implements LogoutHandler {
             // 前端把localstorage中的token也删除掉
             // 删除token: k->token,v->权限
             String username = TokenManager.getUserInfoFromToken(token);
+            log.info("{}",redisTemplate);
             redisTemplate.delete(username);
         }
         ResponseUtil.out(response, R.ok());

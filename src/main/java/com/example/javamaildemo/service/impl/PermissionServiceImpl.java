@@ -6,6 +6,7 @@ import com.example.javamaildemo.service.PermissionService;
 import com.example.javamaildemo.mapper.PermissionMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,7 +20,12 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
 
     @Override
     public List<String> selectById(Long id) {
-        return null;
+        ArrayList<String> permission = new ArrayList<>();
+        permission.add("p1");
+        permission.add("p2");
+        permission.add("p3");
+        permission.add("ROLE_admin");
+        return permission;
     }
 }
 

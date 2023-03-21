@@ -42,7 +42,7 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .logout().logoutUrl("/logout")
-                .addLogoutHandler(new LogoutHandle())
+                .addLogoutHandler(new LogoutHandle(redisTemplate))
                 .and()
                 .addFilter(new TokenLoginFilter(authenticationManager(), redisTemplate, tokenManager))
                 .addFilter(new TokenAuthFilter(authenticationManager(), tokenManager, redisTemplate))
@@ -53,7 +53,7 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         // 不需要认证的路径，可以直接访问
-        web.ignoring().antMatchers("/login");
+//        web.ignoring().antMatchers("/admin/login");
     }
 
     @Override
