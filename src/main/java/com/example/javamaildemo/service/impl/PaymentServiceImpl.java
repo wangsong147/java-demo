@@ -5,6 +5,8 @@ import com.example.javamaildemo.entity.Payment;
 import com.example.javamaildemo.service.PaymentService;
 import com.example.javamaildemo.mapper.PaymentMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
 * @author JK
@@ -14,6 +16,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentServiceImpl extends ServiceImpl<PaymentMapper, Payment>
     implements PaymentService{
+    /**
+     * 转帐：a+100元，b-100元
+     * 事务应该加在sevice的方法上，以业务为基准，而不是单个方法的事务
+     */
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
+    public void transferAccounts(){}
 
 }
 

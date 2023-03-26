@@ -1,0 +1,54 @@
+# 指定具体包的日志级别
+#logging:
+#  config: classpath:logback-spring.xml
+#  level:
+#    com.example.javamaildemo: debug
+server:
+  port: 6001
+spring:
+  mail:
+    host: smtp.163.com
+    username: song5_wang@163.com
+    password: FIUECJDZXERBYFNZ
+  redis:
+    # 数据库索引 默认是0
+    database: 0
+    # Redis服务器地址
+    host: localhost
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    password:
+  #  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://database.coding-future.com:3306/postgres
+#    username: erp_220504_one
+#    password: 123456
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wstest
+    username: root
+    password: ws810216
+
+#    dynamic:
+#      primary: master
+#      datasource:
+#        master:
+#          driver-class-name: org.postgresql.Driver
+#          url: jdbc:postgresql://localhost:5432/postgres?currentSchema=wstest&characterEncoding=utf-8&serverTimezone=GMT%2B8
+#          username: postgres
+#          password: postgres
+#        slave_1:
+#          driver-class-name: org.postgresql.Driver
+#          url: jdbc:postgresql://localhost:5432/postgres?currentSchema=wstest&characterEncoding=utf-8&serverTimezone=GMT%2B8
+#          username: postgres
+#          password: postgres
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 全局配置，也可以通过配置类来配置 public GlobalConfig globalConfig() { return new GlobalConfig(); }
+  global-config:
+    db-config:
+      # 拼接sql时会加上前缀t_: select t_person
+      table-prefix: t_
+#      id-type: input

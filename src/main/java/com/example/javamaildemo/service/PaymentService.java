@@ -9,5 +9,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2023-03-03 10:59:37
 */
 public interface PaymentService extends IService<Payment> {
-
+    void transferAccounts();
 }
