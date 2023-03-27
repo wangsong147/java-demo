@@ -1,10 +1,13 @@
 # 指定具体包的日志级别
-#logging:
-#  config: classpath:logback-spring.xml
-#  level:
-#    com.example.javamaildemo: debug
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com.example.javamaildemo: debug
 server:
   port: 6001
+  # 拼接请求-路径前缀
+  servlet:
+#    context-path: /java-dev-demo
 spring:
   mail:
     host: smtp.163.com
@@ -20,15 +23,14 @@ spring:
     # Redis服务器连接密码（默认为空）
     password:
   #  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://database.coding-future.com:3306/postgres
-#    username: erp_220504_one
-#    password: 123456
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    url: jdbc:mysql://database.coding-future.com:3306/postgres
+  #    username: erp_220504_one
+  #    password: 123456
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.170.181:3306/wstest
-#    url: jdbc:mysql://localhost:3306/wstest
-    username: root
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.170.181:5432/ws_test?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: postgres
     password: 123456
 #    password: ws810216
 

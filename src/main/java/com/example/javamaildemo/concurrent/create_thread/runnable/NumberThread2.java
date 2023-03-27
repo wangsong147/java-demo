@@ -1,6 +1,6 @@
-package com.example.javamaildemo.concurrent.runnable;
+package com.example.javamaildemo.concurrent.create_thread.runnable;
 
-public class NumberThread1 implements Runnable {
+public class NumberThread2 implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {

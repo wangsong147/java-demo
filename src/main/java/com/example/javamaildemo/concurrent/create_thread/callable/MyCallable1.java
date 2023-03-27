@@ -1,4 +1,4 @@
-package com.example.javamaildemo.concurrent.callable;
+package com.example.javamaildemo.concurrent.create_thread.callable;
 
 import java.util.concurrent.Callable;
 

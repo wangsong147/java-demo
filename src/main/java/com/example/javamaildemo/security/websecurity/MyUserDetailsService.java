@@ -2,7 +2,7 @@
 //
 //import cn.hutool.crypto.digest.MD5;
 //import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-//import com.example.javamaildemo.entity.Users;
+//import com.example.javamaildemo.security.microservice.entity.Users;
 //import com.example.javamaildemo.mapper.UsersMapper;
 //import org.springframework.security.core.GrantedAuthority;
 //import org.springframework.security.core.authority.AuthorityUtils;

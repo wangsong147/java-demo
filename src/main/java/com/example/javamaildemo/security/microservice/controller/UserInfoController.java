@@ -1,7 +1,7 @@
 package com.example.javamaildemo.security.microservice.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.example.javamaildemo.entity.Users;
+import com.example.javamaildemo.security.microservice.entity.Users;
 import com.example.javamaildemo.security.microservice.util.R;
 import com.example.javamaildemo.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +29,9 @@ public class UserInfoController {
 
     public static void main(String[] args) {
         Jedis jedis = new Jedis("192.168.170.181", 6379);
+        jedis.set("1","2");
+        System.out.println(jedis.get("1"));
+
         String ping = jedis.ping();
         System.out.println("PING:" + ping);
 

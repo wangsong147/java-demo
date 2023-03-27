@@ -1,4 +1,4 @@
-package com.example.javamaildemo.concurrent.thread;
+package com.example.javamaildemo.concurrent.create_thread.thread;
 
 public class MyThread1 extends Thread{
     @Override

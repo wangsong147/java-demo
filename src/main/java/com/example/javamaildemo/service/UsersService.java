@@ -1,6 +1,6 @@
 package com.example.javamaildemo.service;
 
-import com.example.javamaildemo.entity.Users;
+import com.example.javamaildemo.security.microservice.entity.Users;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.Map;

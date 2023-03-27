@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.javamaildemo.mapper.RolePlayUsersMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.javamaildemo.entity.RolePlayUsers">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="rolePlay" column="role_play" jdbcType="VARCHAR"/>
+            <result property="employeeId" column="employee_id" jdbcType="VARCHAR"/>
+            <result property="startTime" column="start_time" jdbcType="TIMESTAMP"/>
+            <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="deleted" column="deleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,role_play,employee_id,
+        start_time,end_time,status,
+        deleted
+    </sql>
+</mapper>

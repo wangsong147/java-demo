@@ -1,7 +1,7 @@
 package com.example.javamaildemo.security.microservice.filter;
 
-import com.example.javamaildemo.entity.SecurityUser;
-import com.example.javamaildemo.entity.Users;
+import com.example.javamaildemo.security.microservice.entity.SecurityUser;
+import com.example.javamaildemo.security.microservice.entity.Users;
 import com.example.javamaildemo.security.microservice.util.R;
 import com.example.javamaildemo.security.microservice.util.ResponseUtil;
 import com.example.javamaildemo.security.microservice.util.TokenManager;

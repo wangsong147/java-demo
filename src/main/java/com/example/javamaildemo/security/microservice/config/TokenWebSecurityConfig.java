@@ -1,6 +1,6 @@
 package com.example.javamaildemo.security.microservice.config;
 
-import com.example.javamaildemo.security.microservice.filter.MicroUserDetailsService;
+import com.example.javamaildemo.security.microservice.service.MicroUserDetailsService;
 import com.example.javamaildemo.security.microservice.filter.TokenAuthFilter;
 import com.example.javamaildemo.security.microservice.filter.TokenLoginFilter;
 import com.example.javamaildemo.security.microservice.security.DefaultPasswordEncoder;
@@ -13,8 +13,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.configurers.DefaultLoginPageConfigurer;
-import org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter;
 
 import javax.annotation.Resource;
 

@@ -1,7 +1,7 @@
 package com.example.javamaildemo.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.javamaildemo.entity.Users;
+import com.example.javamaildemo.security.microservice.entity.Users;
 import com.example.javamaildemo.service.UsersService;
 import com.example.javamaildemo.mapper.UsersMapper;
 import org.springframework.stereotype.Service;

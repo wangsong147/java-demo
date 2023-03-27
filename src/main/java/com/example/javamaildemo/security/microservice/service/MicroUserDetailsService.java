@@ -1,8 +1,8 @@
-package com.example.javamaildemo.security.microservice.filter;
+package com.example.javamaildemo.security.microservice.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.example.javamaildemo.entity.SecurityUser;
-import com.example.javamaildemo.entity.Users;
+import com.example.javamaildemo.security.microservice.entity.SecurityUser;
+import com.example.javamaildemo.security.microservice.entity.Users;
 import com.example.javamaildemo.mapper.UsersMapper;
 import com.example.javamaildemo.service.PermissionService;
 import org.springframework.security.core.userdetails.UserDetails;
