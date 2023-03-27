@@ -2,10 +2,9 @@ package com.example.javamaildemo.test;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.example.javamaildemo.JavaMailDemoApplication;
-import com.example.javamaildemo.entity.Users;
 import com.example.javamaildemo.mapper.UsersMapper;
+import com.example.javamaildemo.security.microservice.entity.Users;
 import com.example.javamaildemo.service.UsersService;
-import org.apache.tomcat.util.http.fileupload.RequestContext;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -15,7 +14,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Map;
 
 @SpringBootTest(classes = JavaMailDemoApplication.class)
 public class JdbcTest {
@@ -32,7 +30,7 @@ public class JdbcTest {
     private UsersMapper usersMapper;
 
     @Test
-    public void selectMaps(){
+    public void selectMaps() {
 //        usersService.listMaps().forEach(System.out::println);
 //        usersService.list().forEach(System.out::println);
         System.out.println(RequestContextHolder.getRequestAttributes());

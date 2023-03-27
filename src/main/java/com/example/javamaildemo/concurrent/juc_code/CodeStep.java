@@ -1,4 +1,4 @@
-package com.example.javamaildemo.concurrent.juc_code.example1_synchronized;
+package com.example.javamaildemo.concurrent.juc_code;
 
 public class CodeStep {
     /**
