@@ -1,6 +1,5 @@
 package com.example.javamaildemo.concurrent.create_thread.callable;
 
-import javafx.concurrent.Task;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.Callable;
