@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.javamaildemo.entity.PlusModel;
 import com.example.javamaildemo.entity.RolePlayUsers;
+import com.example.javamaildemo.mapper.RolePlayUsersMapper;
 import com.example.javamaildemo.service.RolePlayUsersService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;

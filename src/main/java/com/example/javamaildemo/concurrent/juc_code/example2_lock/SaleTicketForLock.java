@@ -13,7 +13,7 @@ class TicketL {
     private Integer ticketNumber = 30;
 
     // 创建可重入锁
-    private final ReentrantLock lock = new ReentrantLock();
+    private final ReentrantLock lock = new ReentrantLock(true);// 公平锁，对线程雨露均沾
 
     public synchronized void sale() {
         // 上锁
@@ -36,17 +36,17 @@ public class SaleTicketForLock {
         TicketL ticket = new TicketL();
         // 创建 三个线程，调用卖票方法(下面调用的是同一个对象)
         new Thread(() -> {
-            for (int i = 0; i < 40; i++) {
+            for (int i = 0; i < 10; i++) {
                 ticket.sale();
             }
         }, "AA").start();
         new Thread(() -> {
-            for (int i = 0; i < 40; i++) {
+            for (int i = 0; i < 10; i++) {
                 ticket.sale();
             }
         }, "BB").start();
         new Thread(() -> {
-            for (int i = 0; i < 40; i++) {
+            for (int i = 0; i < 10; i++) {
                 ticket.sale();
             }
         }, "CC").start();
