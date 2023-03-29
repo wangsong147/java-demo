@@ -1,4 +1,4 @@
-package com.example.javamaildemo.concurrent.juc_code;
+package com.example.javamaildemo.concurrent.lock;
 
 public class CodeStep {
     /**

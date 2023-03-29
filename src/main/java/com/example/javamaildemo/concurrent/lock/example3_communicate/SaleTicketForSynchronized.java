@@ -1,4 +1,4 @@
-package com.example.javamaildemo.concurrent.juc_code.example3_communicate;
+package com.example.javamaildemo.concurrent.lock.example3_communicate;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
