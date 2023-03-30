@@ -7,7 +7,7 @@ import java.util.concurrent.RecursiveTask;
 
 class Test{
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        ForkJoinPoolDemo task = new ForkJoinPoolDemo(0, 100);
+        MyForkJoinTask task = new MyForkJoinTask(0, 100);
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         ForkJoinTask<Integer> forkJoin = forkJoinPool.submit(task);
         Integer integer = forkJoin.get();
@@ -15,14 +15,14 @@ class Test{
         forkJoinPool.shutdown();
     }
 }
-public class ForkJoinPoolDemo extends RecursiveTask<Integer> {
+public class MyForkJoinTask extends RecursiveTask<Integer> {
     // 差值不能超过10
     private static final Integer VALUE = 10;
     private int begin;
     private int end;
     private int result;
 
-    ForkJoinPoolDemo(int begin, int end) {
+    MyForkJoinTask(int begin, int end) {
         this.begin = begin;
         this.end = end;
     }
@@ -39,9 +39,9 @@ public class ForkJoinPoolDemo extends RecursiveTask<Integer> {
             // 获取中间值
             int middle = (end + begin) / 2;
             // 拆分左边
-            ForkJoinPoolDemo f1 = new ForkJoinPoolDemo(begin, middle);
+            MyForkJoinTask f1 = new MyForkJoinTask(begin, middle);
             // 拆分右边
-            ForkJoinPoolDemo f2 = new ForkJoinPoolDemo(middle + 1, end);
+            MyForkJoinTask f2 = new MyForkJoinTask(middle + 1, end);
             // 调用方法拆分
             f1.fork();
             f2.fork();

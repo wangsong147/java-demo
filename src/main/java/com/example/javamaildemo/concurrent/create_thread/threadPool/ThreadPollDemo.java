@@ -35,7 +35,8 @@ public class ThreadPollDemo {
         MyCallable1 myCallable1 = new MyCallable1();
         FutureTask<String> stringFutureTask = new FutureTask<String>(myCallable1);
         Thread thread = new Thread(stringFutureTask);
-        // todo 设置为守护进程(用户进程 -> 守护进程)，用户进程在就不会关闭jvm
+        // todo 设置为守护进程(用户进程 -> 守护进程)
+        //  注：只要有用户进程存在jvm就不会关闭
         thread.setDaemon(true);
         thread.start();
     }
