@@ -56,3 +56,8 @@ mybatis-plus:
       # 拼接sql时会加上前缀t_: select t_person
       table-prefix: t_
 #      id-type: input
+
+wx.open.app_id: wxed9954c01bb89b47
+wx.open.app_secret: a7482517235173ddb4083788de60b90e
+wx.open.redirect_url: wxed9954c01bb89b47
+
