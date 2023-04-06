@@ -18,7 +18,7 @@ import java.util.HashMap;
 @Controller
 @RequestMapping("/api/oauth2/wx")
 public class OAuth2Controller {
-    @Value("${wechat.appid}")
+    @Value("${wx_app_id}")
     private String wechatAppId;
 
     @Value("${wechat.secret}")

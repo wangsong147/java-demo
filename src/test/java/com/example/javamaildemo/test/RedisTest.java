@@ -1,4 +1,4 @@
-package com.example.javamaildemo;
+package com.example.javamaildemo.test;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import org.junit.jupiter.api.Test;
